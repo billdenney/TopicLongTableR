@@ -1,7 +1,7 @@
 #' Assist the user to know which packages to load.
 #' @export
 topic_long_table_document_headers <- function() {
-  pkg_list <- c("sciunitx", "topiclongtable")
+  pkg_list <- c("siunitx", "topiclongtable")
   cat(
     paste0("header-includes:\n",
            paste0(sprintf(" - \\usepackage{%s}\n", pkg_list),
