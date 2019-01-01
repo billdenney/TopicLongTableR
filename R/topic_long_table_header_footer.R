@@ -2,8 +2,8 @@
 #'
 #' @param x The object to generate the header for.
 #' @param col_names The column names to use for the table header (defaults to
-#'   \code{names(x)} if \code{NULL}).  This must have the same length as
-#'   \code{ncol(x)}.
+#'   \code{Hmisc::latexTranslate(colnames(x))} if \code{NULL}).  This must have
+#'   the same length as \code{ncol(x)}.
 #' @param above_col_names,below_col_names LaTeX text to place above/below the
 #'   col_names text (typically this will be a horizontal line with "\\hline").
 #' @param subsequent_page_notification LaTeX text to place above the subsequent
@@ -41,7 +41,7 @@ topic_long_table_header <- function(x,
     }
   } else {
     if (is.null(col_names)) {
-      col_names <- colnames(x)
+      col_names <- Hmisc::latexTranslate(colnames(x))
     } else if (length(col_names) != ncol(x)) {
       stop("`col_names` must have the same length as `ncol(x)`.")
     }

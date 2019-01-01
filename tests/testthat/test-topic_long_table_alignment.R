@@ -1,8 +1,8 @@
 context("Alignment by class")
 
 test_that("single classes give expected alignment", {
-  expect_equal(topic_long_table_alignment.numeric(), "S")
-  expect_equal(topic_long_table_alignment.numeric(5), "S")
+  expect_equal(topic_long_table_alignment.numeric(), "r")
+  expect_equal(topic_long_table_alignment.numeric(5), "r")
   expect_equal(topic_long_table_alignment.default(), "l")
   expect_equal(topic_long_table_alignment.default("A"), "l")
   expect_equal(topic_long_table_alignment.default(NA), "l")
@@ -12,27 +12,27 @@ test_that("single classes give expected alignment", {
 test_that("matrix alignment occurs by class and returns the right size output", {
   expect_equal(
     topic_long_table_alignment(matrix(rep(1, 4), ncol=1), topic_cols=1),
-    "|FS|",
+    "|Fr|",
     info="single column"
   )
   expect_equal(
     topic_long_table_alignment(matrix(rep(1, 4), ncol=4), topic_cols=1),
-    "|FS|S|S|S|",
+    "|Fr|r|r|r|",
     info="multiple column, one topic"
   )
   expect_equal(
     topic_long_table_alignment(matrix(rep(1, 4), ncol=4), topic_cols=1),
-    "|FS|S|S|S|",
+    "|Fr|r|r|r|",
     info="single column"
   )
   expect_equal(
     topic_long_table_alignment(matrix(rep(1, 4), ncol=4), topic_cols=3),
-    "|FS|TS|TS|S|",
+    "|Fr|Tr|Tr|r|",
     info="single column"
   )
   expect_equal(
     topic_long_table_alignment(data.frame(A=1, B="A", C=TRUE, D=NA_integer_), topic_cols=3),
-    "|FS|Tl|Tl|S|",
+    "|Fr|Tl|Tl|r|",
     info="single column"
   )
 })

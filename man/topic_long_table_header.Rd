@@ -18,8 +18,8 @@ topic_long_table_footer(x, bottom_border = "\\\\hline",
 \item{x}{The object to generate the header for.}
 
 \item{col_names}{The column names to use for the table header (defaults to
-\code{names(x)} if \code{NULL}).  This must have the same length as
-\code{ncol(x)}.}
+\code{Hmisc::latexTranslate(colnames(x))} if \code{NULL}).  This must have
+the same length as \code{ncol(x)}.}
 
 \item{above_col_names, below_col_names}{LaTeX text to place above/below the
 col_names text (typically this will be a horizontal line with "\\hline").}
