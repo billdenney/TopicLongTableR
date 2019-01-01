@@ -25,7 +25,7 @@ topic_long_table_alignment <- function(x, topic_cols, align=NULL, left_border="|
 }
 #' @describeIn topic_long_table_alignment For numbers, align on decimal.
 #' @export
-topic_long_table_alignment.numeric <- function(x, ...) "S"
+topic_long_table_alignment.numeric <- function(x, ...) "r"
 #' @describeIn topic_long_table_alignment For anything not specified, left justify.
 #' @export
 topic_long_table_alignment.default <- function(x, ...) "l"
