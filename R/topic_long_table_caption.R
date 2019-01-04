@@ -8,6 +8,7 @@
 #' @return The caption for inclusion in a table or an empty string if no caption
 #'   is provided.
 #' @export
+#' @importFrom Hmisc latexTranslate
 topic_long_table_caption <- function(x, text=NULL, label=NULL) {
   #\caption{My caption for this table\label{foo}}\\
   if (is.null(text)) {
@@ -20,8 +21,8 @@ topic_long_table_caption <- function(x, text=NULL, label=NULL) {
       if (is.null(label)) {
         ""
       } else {
-        sprintf("\\label{%s}", label)
+        sprintf("\\label{%s}", Hmisc::latexTranslate(label))
       }
-    sprintf("\\caption{%s%s} \\\\", text, label_text)
+    sprintf("\\caption{%s%s} \\\\", Hmisc::latexTranslate(text), label_text)
   }
 }
