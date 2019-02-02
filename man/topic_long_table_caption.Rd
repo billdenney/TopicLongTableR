@@ -4,17 +4,19 @@
 \alias{topic_long_table_caption}
 \title{Generate a LaTeX table caption}
 \usage{
-topic_long_table_caption(x, text = NULL, label = NULL)
+topic_long_table_caption(x, text = NULL, label = NULL,
+  combine_short_long = TRUE)
 }
 \arguments{
 \item{x}{The object to make into a topiclongtable (typically a data.frame or
 matrix)}
 
-\item{text}{Text to place in the caption.  If \code{NULL}, the caption
-attribute for \code{x} will be used, if it exists.  If neither is provided,
-the caption will be an empty string.}
+\item{text}{Text to place in the caption.  See Details.}
 
 \item{label}{The label for the caption}
+
+\item{combine_short_long}{Should the short and long captions be combined for
+the long caption?  See Details.}
 }
 \value{
 The caption for inclusion in a table or an empty string if no caption
@@ -22,4 +24,13 @@ The caption for inclusion in a table or an empty string if no caption
 }
 \description{
 Generate a LaTeX table caption
+}
+\details{
+For \code{text}, if \code{NULL}, the caption attribute for \code{x}
+  will be used, if it exists.  If neither is provided, the caption will be an
+  empty string (i.e. no caption).  If the length of the character vector for
+  the caption text (as defined earlier in this paragraph) is 1, the caption
+  will be used as-is; if the length is 2 and \code{combine_short_long ==
+  TRUE}, then the first element will be used as the short caption and the
+  first and second will be pasted together for the long caption.
 }
