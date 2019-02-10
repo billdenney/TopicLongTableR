@@ -63,9 +63,9 @@ topic_long_table_alignment.matrix <- function(x, topic_cols, align=NULL, ...) {
 #' @noRd
 clean_align <- function(x, align) {
   if (length(missing_align <- setdiff(align, names(topic_long_table_align_choices)))) {
-    stop(
+    warning(
       sprintf(
-        "Invalid values for `align` (%s).  Values must be one of the following: %s",
+        "Unknown values for `align` (%s).  Unknown values may results in LaTeX compilation errors.  Values are expected to be one of the following: %s",
         paste(unique(missing_align), collapse=", "),
         paste(names(topic_long_table_align_choices), collapse=", ")
       )

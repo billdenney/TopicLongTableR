@@ -61,8 +61,8 @@ test_that("Invalid input provides an error", {
     clean_align(data.frame(A=1, B=2), align=c("l", "l", "l")),
     info="multiple column, different multiple specification"
   )
-  expect_error(
+  expect_warning(
     clean_align(data.frame(A=1), align="z"),
-    info="invalid alignment"
+    info="unknown alignment"
   )
 })
