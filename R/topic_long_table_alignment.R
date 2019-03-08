@@ -36,9 +36,7 @@ topic_long_table_alignment.data.frame <- function(x, topic_cols, align=NULL, lef
     align <- sapply(as.list(x), topic_long_table_alignment)
   }
   align <- clean_align(x, align)
-  topic_cols_ret <- c(rep("T", topic_cols),
-                      rep("", ncol(x) - topic_cols))
-  topic_cols_ret[1] <- "F"
+  topic_cols_ret <- c("F", rep("T", ncol(x) - 1))
   paste0(
     left_border,
     paste(topic_cols_ret, align, sep="", collapse=inner_border),

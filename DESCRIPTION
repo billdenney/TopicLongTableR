@@ -1,6 +1,6 @@
 Package: TopicLongTable
 Title: Create LaTeX Tables Using the topiclongtable CTAN Package
-Version: 0.0.0.9005
+Version: 0.0.0.9006
 Authors@R: person("Bill", "Denney", email="wdenney@humanpredictions.com", role=c("aut", "cre"), comment=c(ORCID="0000-0002-5759-428X"))
 Description: The CTAN topiclongtable package makes tables with rowspans for
   output that repeats.  This facilitates creating such tables for rmarkdown

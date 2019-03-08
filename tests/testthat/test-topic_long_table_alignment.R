@@ -17,22 +17,22 @@ test_that("matrix alignment occurs by class and returns the right size output", 
   )
   expect_equal(
     topic_long_table_alignment(matrix(rep(1, 4), ncol=4), topic_cols=1),
-    "|Fr|r|r|r|",
+    "|Fr|Tr|Tr|Tr|",
     info="multiple column, one topic"
   )
   expect_equal(
     topic_long_table_alignment(matrix(rep(1, 4), ncol=4), topic_cols=1),
-    "|Fr|r|r|r|",
+    "|Fr|Tr|Tr|Tr|",
     info="single column"
   )
   expect_equal(
     topic_long_table_alignment(matrix(rep(1, 4), ncol=4), topic_cols=3),
-    "|Fr|Tr|Tr|r|",
+    "|Fr|Tr|Tr|Tr|",
     info="single column"
   )
   expect_equal(
     topic_long_table_alignment(data.frame(A=1, B="A", C=TRUE, D=NA_integer_), topic_cols=3),
-    "|Fr|Tl|Tl|r|",
+    "|Fr|Tl|Tl|Tr|",
     info="single column"
   )
 })
