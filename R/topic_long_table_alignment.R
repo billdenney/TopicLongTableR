@@ -15,12 +15,14 @@ topic_long_table_align_choices <-
 #' @param align The alignment to use.  If \code{NULL}, defaults are used.
 #' @param left_border,inner_border,right_border The left, inner, and right
 #'   borders of the table.
+#' @param verbatim Use the provided character scalar verbatim without other
+#'   processing.
 #' @param ... Passed to other \code{topic_long_table_alignment} methods.
 #' @return A character scalar defining the alignment either for the current
 #'   column (for individual classes) or the entire table (for table classes like
 #'   data.frame and matrix).
 #' @export
-topic_long_table_alignment <- function(x, topic_cols, align=NULL, left_border="|", inner_border="|", right_border="|") {
+topic_long_table_alignment <- function(x, topic_cols, align=NULL, left_border="|", inner_border="|", right_border="|", ...) {
   UseMethod("topic_long_table_alignment")
 }
 #' @describeIn topic_long_table_alignment For numbers, align on decimal.
@@ -31,7 +33,13 @@ topic_long_table_alignment.numeric <- function(x, ...) "r"
 topic_long_table_alignment.default <- function(x, ...) "l"
 #' @describeIn topic_long_table_alignment For data.frames, alignment occurs by column class.
 #' @export
-topic_long_table_alignment.data.frame <- function(x, topic_cols, align=NULL, left_border="|", inner_border="|", right_border="|") {
+topic_long_table_alignment.data.frame <- function(x, topic_cols, align=NULL, left_border="|", inner_border="|", right_border="|", ..., verbatim=NULL) {
+  if (!is.null(verbatim)) {
+    if (!is.character(verbatim) || length(verbatim) != 1) {
+      stop("`verbatim` must be a character scalar.")
+    }
+    return(verbatim)
+  }
   if (is.null(align)) {
     align <- sapply(as.list(x), topic_long_table_alignment)
   }

@@ -5,6 +5,7 @@
 #' @param label The label for the caption
 #' @param combine_short_long Should the short and long captions be combined for
 #'   the long caption?  See Details.
+#' @inheritParams topic_long_table_alignment
 #' @return The caption for inclusion in a table or an empty string if no caption
 #'   is provided.
 #'
@@ -18,7 +19,13 @@
 #'
 #' @export
 #' @importFrom Hmisc latexTranslate
-topic_long_table_caption <- function(x, text=NULL, label=NULL, combine_short_long=TRUE) {
+topic_long_table_caption <- function(x, text=NULL, label=NULL, combine_short_long=TRUE, verbatim=NULL) {
+  if (!is.null(verbatim)) {
+    if (!is.character(verbatim) || length(verbatim) != 1) {
+      stop("`verbatim` must be a character scalar.")
+    }
+    return(verbatim)
+  }
   #\caption{My caption for this table\label{foo}}\\
   if (is.null(text)) {
     text <- attr(x, "caption", exact=TRUE)

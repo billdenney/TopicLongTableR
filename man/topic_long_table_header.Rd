@@ -8,11 +8,12 @@
 topic_long_table_header(x, col_names = NULL,
   above_col_names = "\\\\hline", below_col_names = "\\\\hline",
   subsequent_page_notification = "\\\\ldots continued",
-  latex_header = NULL)
+  latex_header = NULL, verbatim = NULL)
 
 topic_long_table_footer(x, bottom_border = "\\\\hline",
   bottom_all_pages = NULL, bottom_last_page = NULL,
-  subsequent_page_notification = "continued \\\\ldots")
+  subsequent_page_notification = "continued \\\\ldots",
+  verbatim = NULL)
 }
 \arguments{
 \item{x}{The object to generate the header for.}
@@ -30,6 +31,9 @@ page headers}
 \item{latex_header}{A fully-defined LaTeX header to use in place of the
 auto-generated header.  (If a character scalar, it is returned as-is; if
 character a vector, it is joined with " \\\\\\n" separating the elements.)}
+
+\item{verbatim}{Use the provided character scalar verbatim without other
+processing.}
 
 \item{bottom_border}{The border below the tabular text on all pages.}
 

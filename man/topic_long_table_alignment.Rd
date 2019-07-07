@@ -9,7 +9,7 @@
 \title{Set alignment for a topiclongtable}
 \usage{
 topic_long_table_alignment(x, topic_cols, align = NULL,
-  left_border = "|", inner_border = "|", right_border = "|")
+  left_border = "|", inner_border = "|", right_border = "|", ...)
 
 \method{topic_long_table_alignment}{numeric}(x, ...)
 
@@ -17,7 +17,7 @@ topic_long_table_alignment(x, topic_cols, align = NULL,
 
 \method{topic_long_table_alignment}{data.frame}(x, topic_cols,
   align = NULL, left_border = "|", inner_border = "|",
-  right_border = "|")
+  right_border = "|", ..., verbatim = NULL)
 
 \method{topic_long_table_alignment}{matrix}(x, topic_cols, align = NULL,
   ...)
@@ -35,6 +35,9 @@ used).}
 borders of the table.}
 
 \item{...}{Passed to other \code{topic_long_table_alignment} methods.}
+
+\item{verbatim}{Use the provided character scalar verbatim without other
+processing.}
 }
 \value{
 A character scalar defining the alignment either for the current

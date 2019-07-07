@@ -5,7 +5,7 @@
 \title{Generate a LaTeX table caption}
 \usage{
 topic_long_table_caption(x, text = NULL, label = NULL,
-  combine_short_long = TRUE)
+  combine_short_long = TRUE, verbatim = NULL)
 }
 \arguments{
 \item{x}{The object to make into a topiclongtable (typically a data.frame or
@@ -17,6 +17,9 @@ matrix)}
 
 \item{combine_short_long}{Should the short and long captions be combined for
 the long caption?  See Details.}
+
+\item{verbatim}{Use the provided character scalar verbatim without other
+processing.}
 }
 \value{
 The caption for inclusion in a table or an empty string if no caption

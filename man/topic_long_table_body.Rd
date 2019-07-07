@@ -5,7 +5,7 @@
 \title{Generate the body of a topiclongtable}
 \usage{
 topic_long_table_body(x, topic_cols, row_border = "\\\\TopicLine",
-  latex_clean = TRUE)
+  latex_clean = TRUE, verbatim = NULL)
 }
 \arguments{
 \item{x}{The object to make into a topiclongtable (typically a data.frame or
@@ -19,6 +19,9 @@ used).}
 \item{latex_clean}{Should cleaning occur?  Cleaning is: If a data.frame or
 matrix, the contents are run through
 \code{Hmisc::latexTranslate(format(x))} prior to generating the table body.}
+
+\item{verbatim}{Use the provided character scalar verbatim without other
+processing.}
 }
 \value{
 A character string for use in a topic_long_table body.

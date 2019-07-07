@@ -11,6 +11,7 @@
 #' @param latex_header A fully-defined LaTeX header to use in place of the
 #'   auto-generated header.  (If a character scalar, it is returned as-is; if
 #'   character a vector, it is joined with " \\\\\\n" separating the elements.)
+#' @inheritParams topic_long_table_alignment
 #' @return A character string of table header for a topic_long_table (a single
 #'   string, not a vector).
 #' @export
@@ -18,7 +19,14 @@ topic_long_table_header <- function(x,
                                     col_names=NULL,
                                     above_col_names="\\hline", below_col_names="\\hline",
                                     subsequent_page_notification="\\ldots continued",
-                                    latex_header=NULL) {
+                                    latex_header=NULL,
+                                    verbatim=NULL) {
+  if (!is.null(verbatim)) {
+    if (!is.character(verbatim) || length(verbatim) != 1) {
+      stop("`verbatim` must be a character scalar.")
+    }
+    return(verbatim)
+  }
   if (!is.null(latex_header)) {
     ignored_args <-
       c(
@@ -84,7 +92,14 @@ topic_long_table_footer <- function(x,
                                     bottom_border="\\hline",
                                     bottom_all_pages=NULL,
                                     bottom_last_page=NULL,
-                                    subsequent_page_notification="continued \\ldots") {
+                                    subsequent_page_notification="continued \\ldots",
+                                    verbatim=NULL) {
+  if (!is.null(verbatim)) {
+    if (!is.character(verbatim) || length(verbatim) != 1) {
+      stop("`verbatim` must be a character scalar.")
+    }
+    return(verbatim)
+  }
   # "continued" footer method from https://tex.stackexchange.com/questions/11380/
   paste(
     c(
