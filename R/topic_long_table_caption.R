@@ -1,6 +1,7 @@
 #' Generate a LaTeX table caption
 #'
 #' @inheritParams topic_long_table
+#' @inheritParams topic_long_table_body
 #' @param text Text to place in the caption.  See Details.
 #' @param label The label for the caption
 #' @param combine_short_long Should the short and long captions be combined for
@@ -19,7 +20,7 @@
 #'
 #' @export
 #' @importFrom Hmisc latexTranslate
-topic_long_table_caption <- function(x, text=NULL, label=NULL, combine_short_long=TRUE, verbatim=NULL) {
+topic_long_table_caption <- function(x, text=NULL, label=NULL, combine_short_long=TRUE, latex_clean=TRUE, verbatim=NULL) {
   if (!is.null(verbatim)) {
     if (!is.character(verbatim) || length(verbatim) != 1) {
       stop("`verbatim` must be a character scalar.")
@@ -39,21 +40,24 @@ topic_long_table_caption <- function(x, text=NULL, label=NULL, combine_short_lon
       } else {
         sprintf("\\label{%s}", Hmisc::latexTranslate(label))
       }
+    text_clean <-
+      if (latex_clean) {
+        Hmisc::latexTranslate(text)
+      } else {
+        text
+      }
     if (length(text) == 1) {
-      sprintf("\\caption{%s%s} \\\\", Hmisc::latexTranslate(text), label_text)
+      sprintf("\\caption{%s%s} \\\\", text_clean, label_text)
     } else if ((length(text) == 2) & combine_short_long) {
       sprintf(
         "\\caption[%s]{%s%s} \\\\",
-        Hmisc::latexTranslate(text[1]),
-        Hmisc::latexTranslate(paste(text, collapse=" ")),
+        text_clean[1],
+        paste(text_clean, collapse=" "),
         label_text
       )
     } else if ((length(text) == 2)) {
       sprintf(
-        "\\caption[%s]{%s%s} \\\\",
-        Hmisc::latexTranslate(text[1]),
-        Hmisc::latexTranslate(text[2]),
-        label_text
+        "\\caption[%s]{%s%s} \\\\", text_clean[1], text_clean[2], label_text
       )
     } else {
       stop("Cannot handle caption text with length: ", length(text))
