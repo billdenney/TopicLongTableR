@@ -5,15 +5,24 @@
 \alias{topic_long_table_footer}
 \title{Generate the table header or footer}
 \usage{
-topic_long_table_header(x, col_names = NULL,
-  above_col_names = "\\\\hline", below_col_names = "\\\\hline",
+topic_long_table_header(
+  x,
+  col_names = NULL,
+  above_col_names = "\\\\hline",
+  below_col_names = "\\\\hline",
   subsequent_page_notification = "\\\\ldots continued",
-  latex_header = NULL, verbatim = NULL)
+  latex_header = NULL,
+  verbatim = NULL
+)
 
-topic_long_table_footer(x, bottom_border = "\\\\hline",
-  bottom_all_pages = NULL, bottom_last_page = NULL,
+topic_long_table_footer(
+  x,
+  bottom_border = "\\\\hline",
+  bottom_all_pages = NULL,
+  bottom_last_page = NULL,
   subsequent_page_notification = "continued \\\\ldots",
-  verbatim = NULL)
+  verbatim = NULL
+)
 }
 \arguments{
 \item{x}{The object to generate the header for.}

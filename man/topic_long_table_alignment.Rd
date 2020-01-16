@@ -8,19 +8,32 @@
 \alias{topic_long_table_alignment.matrix}
 \title{Set alignment for a topiclongtable}
 \usage{
-topic_long_table_alignment(x, topic_cols, align = NULL,
-  left_border = "|", inner_border = "|", right_border = "|", ...)
+topic_long_table_alignment(
+  x,
+  topic_cols,
+  align = NULL,
+  left_border = "|",
+  inner_border = "|",
+  right_border = "|",
+  ...
+)
 
 \method{topic_long_table_alignment}{numeric}(x, ...)
 
 \method{topic_long_table_alignment}{default}(x, ...)
 
-\method{topic_long_table_alignment}{data.frame}(x, topic_cols,
-  align = NULL, left_border = "|", inner_border = "|",
-  right_border = "|", ..., verbatim = NULL)
+\method{topic_long_table_alignment}{data.frame}(
+  x,
+  topic_cols,
+  align = NULL,
+  left_border = "|",
+  inner_border = "|",
+  right_border = "|",
+  ...,
+  verbatim = NULL
+)
 
-\method{topic_long_table_alignment}{matrix}(x, topic_cols, align = NULL,
-  ...)
+\method{topic_long_table_alignment}{matrix}(x, topic_cols, align = NULL, ...)
 }
 \arguments{
 \item{x}{The object to make into a topiclongtable (typically a data.frame or

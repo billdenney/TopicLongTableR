@@ -5,8 +5,7 @@
 \title{Set values that control marking of continued cells and positioning within
 continued cells.}
 \usage{
-topic_long_table_set(continuation_code = NULL, vpos = NULL,
-  reset = FALSE)
+topic_long_table_set(continuation_code = NULL, vpos = NULL, reset = FALSE)
 }
 \arguments{
 \item{continuation_code}{LaTeX text to add after a continued cell value.}

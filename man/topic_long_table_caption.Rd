@@ -4,8 +4,14 @@
 \alias{topic_long_table_caption}
 \title{Generate a LaTeX table caption}
 \usage{
-topic_long_table_caption(x, text = NULL, label = NULL,
-  combine_short_long = TRUE, verbatim = NULL)
+topic_long_table_caption(
+  x,
+  text = NULL,
+  label = NULL,
+  combine_short_long = TRUE,
+  latex_clean = TRUE,
+  verbatim = NULL
+)
 }
 \arguments{
 \item{x}{The object to make into a topiclongtable (typically a data.frame or
@@ -17,6 +23,10 @@ matrix)}
 
 \item{combine_short_long}{Should the short and long captions be combined for
 the long caption?  See Details.}
+
+\item{latex_clean}{Should cleaning occur?  Cleaning is: If a data.frame or
+matrix, the contents are run through
+\code{Hmisc::latexTranslate(format(x))} prior to generating the table body.}
 
 \item{verbatim}{Use the provided character scalar verbatim without other
 processing.}

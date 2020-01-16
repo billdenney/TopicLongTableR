@@ -4,9 +4,17 @@
 \alias{topic_long_table}
 \title{The eponymous wrapper for generating a topic long table.}
 \usage{
-topic_long_table(x, topic_cols, settings = c(), settings_after = c(),
-  align_args = list(), caption_args = list(), header_args = list(),
-  footer_args = list(), body_args = list())
+topic_long_table(
+  x,
+  topic_cols,
+  settings = c(),
+  settings_after = c(),
+  align_args = list(),
+  caption_args = list(),
+  header_args = list(),
+  footer_args = list(),
+  body_args = list()
+)
 }
 \arguments{
 \item{x}{The object to make into a topiclongtable (typically a data.frame or

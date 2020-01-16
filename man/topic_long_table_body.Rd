@@ -4,8 +4,13 @@
 \alias{topic_long_table_body}
 \title{Generate the body of a topiclongtable}
 \usage{
-topic_long_table_body(x, topic_cols, row_border = "\\\\TopicLine",
-  latex_clean = TRUE, verbatim = NULL)
+topic_long_table_body(
+  x,
+  topic_cols,
+  row_border = "\\\\TopicLine",
+  latex_clean = TRUE,
+  verbatim = NULL
+)
 }
 \arguments{
 \item{x}{The object to make into a topiclongtable (typically a data.frame or
