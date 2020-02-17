@@ -11,6 +11,7 @@ Imports:
   Hmisc,
   knitr
 Suggests:
+  covr,
   testthat
 License: AGPL-3
 Encoding: UTF-8
