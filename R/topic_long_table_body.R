@@ -16,14 +16,16 @@ topic_long_table_body <- function(x, topic_cols, row_border="\\TopicLine", latex
     }
     return(verbatim)
   }
+  if (is.matrix(x)) {
+    # Since this is solely for the body, the easiest way to make matrices work
+    # is to convert them to data.frames
+    x <- as.data.frame(x)
+  }
   if (latex_clean) {
     if (is.data.frame(x)) {
       for (current_col in seq_len(ncol(x))) {
         x[[current_col]] <- Hmisc::latexTranslate(format(x[[current_col]]))
       }
-    } else if (is.matrix(x)) {
-      browser()
-      x <- Hmisc::latexTranslate(format(x))
     } else {
       warning(
         "Automatic LaTeX translation does not occur for class: ",

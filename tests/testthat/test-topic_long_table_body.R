@@ -35,3 +35,10 @@ test_that("body arguments are respected", {
     "`verbatim` must be a character scalar."
   )
 })
+
+test_that("topic_long_table_body latex_clean", {
+  expect_equal(
+    topic_long_table_body(x = matrix(1:4, nrow = 2), topic_cols = 1),
+    topic_long_table_body(x = data.frame(A=1:2, B=3:4), topic_cols = 1)
+  )
+})
