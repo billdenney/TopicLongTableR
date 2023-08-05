@@ -42,9 +42,7 @@ topic_long_table_header <- function(x,
         " provided but will be ignored in favor of `latex_header`."
       )
     }
-    if (length(latex_header) == 1) {
-      latex_header
-    } else {
+    if (length(latex_header) != 1) {
       stop("latex_header must have length == 1 (for no header, use an empty string, '').")
     }
   } else {

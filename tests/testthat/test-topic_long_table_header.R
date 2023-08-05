@@ -44,6 +44,29 @@ test_that("arguments are respected", {
     regexp = "`above_col_names`, `below_col_names`, `subsequent_page_notification` were provided but will be ignored in favor of `latex_header`"
   )
   expect_equal(result, "foo")
+  expect_warning(
+    expect_error(
+      topic_long_table_header(data.frame(A=1), latex_header=1:2),
+      regexp = "latex_header must have length == 1 (for no header, use an empty string, '').",
+      fixed = TRUE
+    ),
+    "`above_col_names`, `below_col_names`, `subsequent_page_notification` were provided but will be ignored in favor of `latex_header`."
+  )
+})
+
+test_that("topic_long_table_header verbatim", {
+  expect_equal(
+    topic_long_table_header(verbatim = "foo"),
+    "foo"
+  )
+  expect_error(
+    topic_long_table_header(verbatim = 1),
+    "`verbatim` must be a character scalar."
+  )
+  expect_error(
+    topic_long_table_header(verbatim = c("a", "b")),
+    "`verbatim` must be a character scalar."
+  )
 })
 
 test_that("standard footer generation", {
@@ -77,5 +100,20 @@ test_that("footer options", {
   expect_equal(
     topic_long_table_footer(x=data.frame(A=1), subsequent_page_notification="foo"),
     "\\hline\n\\multicolumn{1}{r@{}}{foo} \\\\\n\\endfoot\n\\hline\n\\endlastfoot"
+  )
+})
+
+test_that("topic_long_table_footer verbatim", {
+  expect_equal(
+    topic_long_table_footer(verbatim = "foo"),
+    "foo"
+  )
+  expect_error(
+    topic_long_table_footer(verbatim = 1),
+    "`verbatim` must be a character scalar."
+  )
+  expect_error(
+    topic_long_table_footer(verbatim = c("a", "b")),
+    "`verbatim` must be a character scalar."
   )
 })
