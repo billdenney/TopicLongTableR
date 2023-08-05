@@ -52,8 +52,12 @@ topic_long_table_header <- function(x,
     } else if (length(col_names) != ncol(x)) {
       stop("`col_names` must have the same length as `ncol(x)`.")
     }
+    if (is.null(col_names)) {
+      # This shouldn't happen after the call to Hmisc::latexTranslate() above
+      stop("Please report a bug in topic_long_table_header(col_names)") # nocov
+    }
     col_names_part <-
-      if (is.null(col_names)) {
+      if (identical(col_names, logical(0))) {
         # This will typically happen for matrices without column names.
         if (above_col_names == below_col_names) {
           above_col_names
