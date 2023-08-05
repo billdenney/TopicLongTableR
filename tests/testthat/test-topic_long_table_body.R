@@ -22,4 +22,16 @@ test_that("body arguments are respected", {
     topic_long_table_body(data.frame(A=1:2, B=3:4), topic_cols=1, row_border="foo"),
     "foo \\Topic[1] & 3 \\\\\nfoo \\Topic[2] & 4 \\\\"
   )
+  expect_equal(
+    topic_long_table_body(verbatim = "foo"),
+    "foo"
+  )
+  expect_error(
+    topic_long_table_body(verbatim = 1),
+    "`verbatim` must be a character scalar."
+  )
+  expect_error(
+    topic_long_table_body(verbatim = c("a", "b")),
+    "`verbatim` must be a character scalar."
+  )
 })

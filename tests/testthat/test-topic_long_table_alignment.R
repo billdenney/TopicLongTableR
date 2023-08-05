@@ -7,6 +7,21 @@ test_that("single classes give expected alignment", {
   expect_equal(topic_long_table_alignment.default(TRUE), "l")
 })
 
+test_that("topic_long_table_alignment.data.frame", {
+  expect_equal(
+    topic_long_table_alignment.data.frame(verbatim = "abc"),
+    "abc"
+  )
+  expect_error(
+    topic_long_table_alignment.data.frame(verbatim = 1),
+    "`verbatim` must be a character scalar."
+  )
+  expect_error(
+    topic_long_table_alignment.data.frame(verbatim = c("a", "b")),
+    "`verbatim` must be a character scalar."
+  )
+})
+
 test_that("matrix alignment occurs by class and returns the right size output", {
   expect_equal(
     topic_long_table_alignment(matrix(rep(1, 4), ncol=1), topic_cols=1),

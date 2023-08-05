@@ -22,6 +22,7 @@ topic_long_table_body <- function(x, topic_cols, row_border="\\TopicLine", latex
         x[[current_col]] <- Hmisc::latexTranslate(format(x[[current_col]]))
       }
     } else if (is.matrix(x)) {
+      browser()
       x <- Hmisc::latexTranslate(format(x))
     } else {
       warning(
