@@ -11,12 +11,12 @@ test_that("normal headers work", {
   )
   expect_equal(
     topic_long_table_header(matrix(1:2, ncol=1)),
-    "\\hline  \\\\\n\\hline\n\\endfirsthead\n\\multicolumn{1}{@{}l}{\\ldots continued} \\\\\n\\hline  \\\\\n\\hline\n\\endhead",
+    "\\hline\n\\endfirsthead\n\\multicolumn{1}{@{}l}{\\ldots continued} \\\\\n\\hline\n\\endhead",
     info="no header text, one column"
   )
   expect_equal(
     topic_long_table_header(matrix(1:2, ncol=2)),
-    "\\hline  \\\\\n\\hline\n\\endfirsthead\n\\multicolumn{2}{@{}l}{\\ldots continued} \\\\\n\\hline  \\\\\n\\hline\n\\endhead",
+    "\\hline\n\\endfirsthead\n\\multicolumn{2}{@{}l}{\\ldots continued} \\\\\n\\hline\n\\endhead",
     info="no header text, one column"
   )
 })
