@@ -7,3 +7,18 @@ test_that("topic_long_table works", {
     )
   )
 })
+
+test_that("topic_long_table_document_headers", {
+  expect_output(
+    topic_long_table_document_headers(),
+    regexp = "header-includes:\n - \\usepackage{siunitx}\n - \\usepackage{topiclongtable}",
+    fixed = TRUE
+  )
+})
+
+test_that("knit_print.topic_long_table", {
+  expect_equal(
+    knit_print.topic_long_table("a"),
+    knitr::asis_output("a", cacheable = TRUE)
+  )
+})

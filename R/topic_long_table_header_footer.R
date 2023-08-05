@@ -42,19 +42,22 @@ topic_long_table_header <- function(x,
         " provided but will be ignored in favor of `latex_header`."
       )
     }
-    if (length(latex_header) == 1) {
-      latex_header
-    } else {
+    if (length(latex_header) != 1) {
       stop("latex_header must have length == 1 (for no header, use an empty string, '').")
     }
+    latex_header
   } else {
     if (is.null(col_names)) {
       col_names <- Hmisc::latexTranslate(colnames(x))
     } else if (length(col_names) != ncol(x)) {
       stop("`col_names` must have the same length as `ncol(x)`.")
     }
+    if (is.null(col_names)) {
+      # This shouldn't happen after the call to Hmisc::latexTranslate() above
+      stop("Please report a bug in topic_long_table_header(col_names)") # nocov
+    }
     col_names_part <-
-      if (is.null(col_names)) {
+      if (identical(col_names, logical(0))) {
         # This will typically happen for matrices without column names.
         if (above_col_names == below_col_names) {
           above_col_names

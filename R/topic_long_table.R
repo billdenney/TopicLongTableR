@@ -63,7 +63,7 @@ topic_long_table <- function(x, topic_cols,
 #' @export
 knit_print.topic_long_table <- function(x, ...) {
   if (!requireNamespace("knitr")) {
-    stop("knitr is required to knit_print")
+    stop("knitr is required to knit_print") # nocov
   }
   knitr::asis_output(x, cacheable=TRUE)
 }
