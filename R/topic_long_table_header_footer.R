@@ -45,6 +45,7 @@ topic_long_table_header <- function(x,
     if (length(latex_header) != 1) {
       stop("latex_header must have length == 1 (for no header, use an empty string, '').")
     }
+    latex_header
   } else {
     if (is.null(col_names)) {
       col_names <- Hmisc::latexTranslate(colnames(x))
