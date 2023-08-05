@@ -42,3 +42,10 @@ test_that("topic_long_table_body latex_clean", {
     topic_long_table_body(x = data.frame(A=1:2, B=3:4), topic_cols = 1)
   )
 })
+
+test_that("topic_long_table_body expected errors", {
+  expect_error(
+    topic_long_table_body(x = "A", topic_cols = 1),
+    "x must be a data.frame"
+  )
+})
