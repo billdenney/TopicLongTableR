@@ -49,7 +49,7 @@ topic_long_table_body <- function(x, topic_cols, row_border="\\TopicLine", latex
         )
       )
     )
-  prep_x$sep = " & "
+  prep_x$sep <- " & "
   paste(
     row_border,
     do.call(paste, prep_x),
