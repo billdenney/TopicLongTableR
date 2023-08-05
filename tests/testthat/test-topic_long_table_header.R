@@ -69,6 +69,24 @@ test_that("topic_long_table_header verbatim", {
   )
 })
 
+test_that("topic_long_table_header col_names_part", {
+  expect_equal(
+    topic_long_table_header(matrix(1:4, nrow = 2)),
+    "\\hline  \\\\\n\\hline\n\\endfirsthead\n\\multicolumn{2}{@{}l}{\\ldots continued} \\\\\n\\hline  \\\\\n\\hline\n\\endhead"
+  )
+  expect_equal(
+    topic_long_table_header(matrix(1:4, nrow = 2), below_col_names = "foo"),
+    "\\hline  \\\\\nfoo\n\\endfirsthead\n\\multicolumn{2}{@{}l}{\\ldots continued} \\\\\n\\hline  \\\\\nfoo\n\\endhead"
+  )
+})
+
+test_that("topic_long_table_header col_names_part", {
+  expect_equal(
+    topic_long_table_header(data.frame(A=1), subsequent_page_notification = NULL),
+    "\\hline A \\\\\n\\hline\n\\endhead"
+  )
+})
+
 test_that("standard footer generation", {
   expect_equal(
     topic_long_table_footer(x=data.frame(A=1)),
