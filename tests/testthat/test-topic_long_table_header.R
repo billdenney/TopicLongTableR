@@ -1,5 +1,3 @@
-context("Header generation")
-
 test_that("normal headers work", {
   expect_equal(
     topic_long_table_header(data.frame(A=1, B=2)),
@@ -41,13 +39,12 @@ test_that("arguments are respected", {
     topic_long_table_header(data.frame(A=1), subsequent_page_notification="baz"),
     "\\hline A \\\\\n\\hline\n\\endfirsthead\n\\multicolumn{1}{@{}l}{baz} \\\\\n\\hline A \\\\\n\\hline\n\\endhead"
   )
-  expect_equal(
-    expect_warning(topic_long_table_header(data.frame(A=1), latex_header="foo")),
-    "foo"
+  expect_warning(
+    result <- topic_long_table_header(data.frame(A=1), latex_header="foo"),
+    regexp = "`above_col_names`, `below_col_names`, `subsequent_page_notification` were provided but will be ignored in favor of `latex_header`"
   )
+  expect_equal(result, "foo")
 })
-
-context("footer generation")
 
 test_that("standard footer generation", {
   expect_equal(

@@ -1,5 +1,3 @@
-context("complete table")
-
 test_that("topic_long_table works", {
   expect_equal(
     topic_long_table(data.frame(A=rep(1:2, each=4), B=rep(rep(3:4, each=2), 2), C=5:12), topic_cols=2),

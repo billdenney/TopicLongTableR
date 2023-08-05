@@ -1,5 +1,3 @@
-context("Alignment by class")
-
 test_that("single classes give expected alignment", {
   expect_equal(topic_long_table_alignment.numeric(), "r")
   expect_equal(topic_long_table_alignment.numeric(5), "r")
@@ -37,9 +35,7 @@ test_that("matrix alignment occurs by class and returns the right size output", 
   )
 })
 
-context("Alignment cleaning")
-
-test_that("Valid input provides valid output", {
+test_that("Alignment: Valid input provides valid output", {
   expect_equal(
     clean_align(data.frame(A=1), align="l"),
     "l",
@@ -52,7 +48,7 @@ test_that("Valid input provides valid output", {
   )
 })
 
-test_that("Invalid input provides an error", {
+test_that("Alignment: Invalid input provides an error", {
   expect_error(
     clean_align(data.frame(A=1), align=c("l", "l")),
     info="single column, multiple specification"

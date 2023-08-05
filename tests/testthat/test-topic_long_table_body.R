@@ -1,5 +1,3 @@
-context("table body")
-
 test_that("simple table body generation", {
   expect_equal(
     topic_long_table_body(data.frame(A=1), topic_cols=1),

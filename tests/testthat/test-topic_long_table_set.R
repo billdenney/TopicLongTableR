@@ -1,5 +1,3 @@
-context("settings")
-
 test_that("standard settings", {
   expect_error(topic_long_table_set())
   expect_error(topic_long_table_set(vpos="foo"))
