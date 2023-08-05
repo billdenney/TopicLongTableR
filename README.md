@@ -1,7 +1,7 @@
 # TopicLongTable
 
 <!-- badges: start -->
-[![Codecov test coverage](https://codecov.io/gh/billdenney/TopicLongTableR/branch/master/graph/badge.svg)](https://codecov.io/gh/billdenney/TopicLongTableR?branch=master)
+[![Codecov test coverage](https://codecov.io/gh/billdenney/TopicLongTableR/branch/main/graph/badge.svg)](https://codecov.io/gh/billdenney/TopicLongTableR?branch=main)
 [![CRAN status](https://www.r-pkg.org/badges/version/TopicLongTable)](https://CRAN.R-project.org/package=TopicLongTable)
 [![R-CMD-check](https://github.com/billdenney/TopicLongTableR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/billdenney/TopicLongTableR/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
