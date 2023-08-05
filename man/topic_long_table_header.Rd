@@ -58,6 +58,6 @@ Generate the table header or footer
 }
 \section{Functions}{
 \itemize{
-\item \code{topic_long_table_footer}: Generate the footer.
-}}
+\item \code{topic_long_table_footer()}: Generate the footer.
 
+}}

@@ -17,5 +17,6 @@ Suggests:
 License: AGPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.2.3
 Language: en-US
+URL: https://billdenney.github.io/TopicLongTableR/

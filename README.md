@@ -1,9 +1,9 @@
 # TopicLongTable
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.org/billdenney/TopicLongTableR.svg?branch=master)](https://travis-ci.org/billdenney/TopicLongTableR)
 [![Codecov test coverage](https://codecov.io/gh/billdenney/TopicLongTableR/branch/master/graph/badge.svg)](https://codecov.io/gh/billdenney/TopicLongTableR?branch=master)
 [![CRAN status](https://www.r-pkg.org/badges/version/TopicLongTable)](https://CRAN.R-project.org/package=TopicLongTable)
+[![R-CMD-check](https://github.com/billdenney/TopicLongTableR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/billdenney/TopicLongTableR/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of TopicLongTable is to enable generating tables which automatically group values together in row-spanning cells including awareness of new pages.

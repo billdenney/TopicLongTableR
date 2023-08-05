@@ -62,12 +62,12 @@ Set alignment for a topiclongtable
 }
 \section{Methods (by class)}{
 \itemize{
-\item \code{numeric}: For numbers, align on decimal.
+\item \code{topic_long_table_alignment(numeric)}: For numbers, align on decimal.
 
-\item \code{default}: For anything not specified, left justify.
+\item \code{topic_long_table_alignment(default)}: For anything not specified, left justify.
 
-\item \code{data.frame}: For data.frames, alignment occurs by column class.
+\item \code{topic_long_table_alignment(data.frame)}: For data.frames, alignment occurs by column class.
 
-\item \code{matrix}: For matrices, alignment occurs by class.
+\item \code{topic_long_table_alignment(matrix)}: For matrices, alignment occurs by class.
+
 }}
-
