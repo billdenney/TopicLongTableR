@@ -37,7 +37,7 @@ topic_long_table_set <- function(continuation_code=NULL, vpos=NULL, reset=FALSE)
     }
     if (!is.character(continuation_code)) {
       continuation_code <- as.character(continuation_code)
-      warning("continuation code was converted to a character.")
+      warning("`continuation_code` was converted to a character.")
     }
     ret <- c(ret, sprintf("\\TopicSetContinuationCode{%s}", continuation_code))
   }
