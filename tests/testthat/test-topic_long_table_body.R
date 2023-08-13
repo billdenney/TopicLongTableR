@@ -9,7 +9,11 @@ test_that("simple table body generation", {
   )
   expect_equal(
     topic_long_table_body(data.frame(A=1:2, B=3:4), topic_cols=1),
-    "\\TopicLine \\Topic[1] & 3 \\\\\n\\TopicLine \\Topic[2] & 4 \\\\"
+    paste(
+      "\\TopicLine \\Topic[1] & 3 \\\\\\pagebreak[3]",
+      "\\TopicLine \\Topic[2] & 4 \\\\",
+      sep = "\n"
+    )
   )
 })
 
@@ -20,7 +24,11 @@ test_that("body arguments are respected", {
   )
   expect_equal(
     topic_long_table_body(data.frame(A=1:2, B=3:4), topic_cols=1, row_border="foo"),
-    "foo \\Topic[1] & 3 \\\\\nfoo \\Topic[2] & 4 \\\\"
+    paste(
+      "foo \\Topic[1] & 3 \\\\\\pagebreak[3]",
+      "foo \\Topic[2] & 4 \\\\",
+      sep = "\n"
+    )
   )
   expect_equal(
     topic_long_table_body(verbatim = "foo"),
